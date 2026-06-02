@@ -20,3 +20,9 @@ RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y reinstall --no-install-recommends tzdata \
     && echo "Etc/UTC" > /etc/timezone
+
+# generate locale to prevent unset locale warnings
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends locales \
+    && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+    && locale-gen
