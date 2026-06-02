@@ -38,3 +38,10 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         build-essential \
         git \
         python3
+
+# install cross development tools
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+        gcc-arm-none-eabi \
+        libnewlib-arm-none-eabi \
+        srecord
