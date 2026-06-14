@@ -1,0 +1,3 @@
+[submodule "K1_Series_Klipper"]
+	path = K1_Series_Klipper
+	url = https://github.com/powARman/K1_Series_Klipper
