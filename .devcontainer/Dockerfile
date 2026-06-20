@@ -39,6 +39,17 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         git \
         python3
 
+# install kernel related development tools
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+        bc \
+        bison \
+        flex \
+        kmod \
+        libncurses-dev \
+        libssl-dev \
+        u-boot-tools
+
 # install cross development tools
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
