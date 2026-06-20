@@ -1,3 +1,6 @@
 [submodule "K1_Series_Klipper"]
 	path = K1_Series_Klipper
 	url = https://github.com/powARman/K1_Series_Klipper
+[submodule "mips-ingenic-xburst2-toolchain"]
+	path = mips-ingenic-xburst2-toolchain
+	url = https://github.com/powARman/mips-ingenic-xburst2-toolchain.git
