@@ -7,3 +7,6 @@
 [submodule "k1-u-boot"]
 	path = k1-u-boot
 	url = https://github.com/powARman/k1-u-boot.git
+[submodule "k1-linux"]
+	path = k1-linux
+	url = https://github.com/powARman/k1-linux.git
