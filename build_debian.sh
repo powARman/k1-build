@@ -5,8 +5,7 @@
 # Create basic debian root file system
 sudo debootstrap --foreign --arch=mipsel \
     --components=contrib,main,non-free-firmware \
-    --exclude=nano,vim-tiny \
-    --include=locales,vim \
+    --include=locales \
     bookworm "$ROOTFS_DIR"
 
 sudo cp /usr/bin/qemu-mipsel-static "$ROOTFS_DIR"/usr/bin/
