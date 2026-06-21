@@ -57,3 +57,10 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         gcc-arm-none-eabi \
         libnewlib-arm-none-eabi \
         srecord
+
+# install debootstrap tools
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+        binfmt-support \
+        debootstrap \
+        qemu-user-static
