@@ -47,5 +47,11 @@ sudo dd if=/dev/zero of="$ROOTFS_DIR"/swapfile bs=1M count=128
 sudo chroot "$ROOTFS_DIR" chmod 0600 /swapfile
 sudo chroot "$ROOTFS_DIR" mkswap /swapfile
 
+# Copy configuration files
+sudo cp -a --no-preserve=ownership k1-debian/etc/* "$ROOTFS_DIR"/etc/
+
+# Remove host key, it will be regenerated on first boot
+sudo rm "$ROOTFS_DIR"/etc/ssh/ssh_host*
+
 # Clean up
 sudo rm "$ROOTFS_DIR"/usr/bin/qemu-mipsel-static

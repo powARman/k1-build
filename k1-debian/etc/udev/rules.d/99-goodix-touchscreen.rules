@@ -1,0 +1,2 @@
+ATTRS{name}=="goodix-ts", ENV{ID_INPUT_TOUCHSCREEN}="1", ENV{ID_INPUT_TABLET}=""
+
