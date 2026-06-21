@@ -1,5 +1,6 @@
 {
     "name": "K1 build workspace",
+    "privileged": true,
 
     "build": {
         "dockerfile": "Dockerfile",
