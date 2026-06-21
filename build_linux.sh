@@ -1,10 +1,7 @@
 #!/bin/sh
 
-KSRC="$(pwd)/k1-linux"
-KBUILD="$(pwd)/out/linux"
+. $(pwd)/build_env.sh
 
-export PATH="$(pwd)/mips-ingenic-xburst2-toolchain/bin/:$PATH"
+make -C "$KERNEL_SRC" O="$KERNEL_BUILD" x2000_k1_linux_defconfig
 
-make -C "$KSRC" O="$KBUILD" x2000_k1_linux_defconfig
-
-make -j$(nproc) -C "$KSRC" O="$KBUILD" xImage
+make -j$(nproc) -C "$KERNEL_SRC" O="$KERNEL_BUILD" xImage

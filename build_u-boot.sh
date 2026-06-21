@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export PATH="$(pwd)/mips-ingenic-xburst2-toolchain/bin/:$PATH"
+. $(pwd)/build_env.sh
 
-make -j$(nproc) -C k1-u-boot O=$(pwd)/out/u-boot CROSS_COMPILE=mips-linux-gnu- crealityk1_uImage_msc0
+make -j$(nproc) -C "$UBOOT_SRC" O="$BUILD_DIR/u-boot" CROSS_COMPILE=mips-linux-gnu- crealityk1_uImage_msc0
