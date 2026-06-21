@@ -30,7 +30,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # install base tools
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
-        bash-completion
+        bash-completion \
+        vim
 
 # install development tools
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
