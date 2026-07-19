@@ -10,3 +10,6 @@
 [submodule "k1-linux"]
 	path = k1-linux
 	url = https://github.com/powARman/k1-linux.git
+[submodule "k1_mcu_flasher"]
+	path = k1_mcu_flasher
+	url = https://github.com/powARman/k1_mcu_flasher.git
