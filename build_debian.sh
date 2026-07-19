@@ -42,7 +42,7 @@ sudo chroot "$ROOTFS_DIR" adduser printer
 sudo chroot "$ROOTFS_DIR" usermod -aG sudo printer
 
 # Create swap file
-sudo dd if=/dev/zero of="$ROOTFS_DIR"/swapfile bs=1M count=128
+sudo dd if=/dev/zero of="$ROOTFS_DIR"/swapfile bs=1M count=256
 sudo chroot "$ROOTFS_DIR" chmod 0600 /swapfile
 sudo chroot "$ROOTFS_DIR" mkswap /swapfile
 
