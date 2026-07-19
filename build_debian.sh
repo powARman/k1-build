@@ -27,6 +27,7 @@ sudo chroot "$ROOTFS_DIR" apt -y install \
     firmware-brcm80211 \
     git \
     openssh-server \
+    python3-serial \
     python3-virtualenv \
     sudo \
     systemd-timesyncd \
@@ -48,6 +49,8 @@ sudo chroot "$ROOTFS_DIR" mkswap /swapfile
 
 # Copy configuration files
 sudo cp -a --no-preserve=ownership k1-debian/etc/* "$ROOTFS_DIR"/etc/
+
+sudo cp -a --no-preserve=ownership k1_mcu_flasher/mcu_util.py "$ROOTFS_DIR"/usr/bin
 
 # Remove host key, it will be regenerated on first boot
 sudo rm "$ROOTFS_DIR"/etc/ssh/ssh_host*
