@@ -89,17 +89,23 @@ cd ~ && git clone https://github.com/dw-0/kiauh.git
     ```bash
     curl -o ~/kiauh/kiauh.cfg https://raw.githubusercontent.com/powARman/k1-build/refs/heads/main/kiauh/creality-klipper.cfg
     ```
+1. Start KIAUH:
+    ```bash
+    ./kiauh/kiauh.sh
+    ```
+1. Install Klipper, Moonraker, Mainsail, and Crowsnest. **Do not install the Mainsail printer config.**
 1. Input shaping calibration
 
     Do not use KIAUH option to install input shaping dependencies, it will fail. Instead run following command to install dependencies:
     ```bash
     sudo apt install python3-numpy python3-matplotlib
     ```
-1. Start KIAUH:
+    Next, in order to install numpy in the Klipper environment, run the command:
     ```bash
-    ./kiauh/kiauh.sh
+    ~/klippy-env/bin/pip install -v "numpy<1.26"
     ```
-1. Install Klipper, Moonraker, Mainsail, and Crowsnest. **Do not install the Mainsail printer config.**
+    This will take more than 20 minutes to complete.
+
 1. Install host MCU support. Follow the instructions here: [https://www.Klipper3d.org/RPi_microcontroller.html](https://www.Klipper3d.org/RPi_microcontroller.html)
     1. Install the rc script:
         ```bash
@@ -125,7 +131,6 @@ cd ~ && git clone https://github.com/dw-0/kiauh.git
 1. Copy the default printer configs for your printer:
     ```bash
     cp -f ~/klipper/config/<YOUR PRINTER>/* ~/printer_data/config/
-    rm -f ~/printer_data/config/factory_printer.cfg
     ```
     Check [this directory](https://github.com/powARman/K1_Series_Klipper/tree/k1-debian/config) to see what options are available and choose the correct one for your printer. Replace `<YOUR PRINTER>` with the appropriate folder name.
 1. Reboot:
