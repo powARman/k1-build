@@ -1,6 +1,8 @@
 
 export BUILD_DIR="$(pwd)/out"
 
+export MCU_FW_BUILD="$BUILD_DIR/mcu_fw"
+
 export UBOOT_SRC="$(pwd)/k1-u-boot"
 export UBOOT_BUILD="$BUILD_DIR/u-boot"
 
