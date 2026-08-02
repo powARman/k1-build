@@ -1,0 +1,10 @@
+[Unit]
+Description=Update MCU firmware if needed
+Before=klipper.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mcu_update.sh
